@@ -1,0 +1,57 @@
+﻿@page
+@model CricketWebApp.Pages.ViewPlayerstats.MostFoursModel
+@{
+}
+
+<!-- This is the header of the table, which will contain column names -->
+<h3> Most 4s Hit by a Player</h3>
+
+<!-- Add some CSS classes to style the table -->
+<table class="table table-striped table-bordered">
+    <thead>
+        <tr>
+              <!-- This column will display the name of the player -->
+            <th style="background-color: #4CAF50; color: white;">Player Name</th>
+              <!-- This column will display the Inns of the player -->
+             <th style="background-color: #4CAF50; color: white;">Innings</th>
+              <!-- This column will display the 4s of the player -->
+             <th style ="background-color: #4CAF50; color: white;">4S</th>
+        </tr>
+    </thead>
+    <tbody>
+         <!-- This foreach loop will iterate through each player in the "MostFours" list of the model -->
+        @foreach (var player in Model.MostFours)
+        {
+            Console.WriteLine(player);
+            <tr>
+                <td>@player.PlayerName</td>
+                <td>@player.MatchesPlayed</td>
+                <td>@player.Fours</td>
+            </tr>
+        }
+    </tbody>
+    
+<!--Adding styling to the webpage using CSS -->
+ <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        .top-player {
+            color: #228B22;
+        }
+    </style>

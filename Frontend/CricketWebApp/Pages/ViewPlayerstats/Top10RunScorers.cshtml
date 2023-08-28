@@ -1,0 +1,54 @@
+﻿@page
+@model CricketWebApp.Pages.ViewPlayerstats.Top10RunScorersModel
+@{
+}
+
+<!-- This is the header of the table, which will contain column names -->
+<h1>Top 10 Run Scorers</h1>
+
+<table>
+    <thead>
+        <tr>
+            <!-- This column will display the name of the player -->
+            <th>PlayerName</th>
+            <!-- This column will display the MatchesPlayed of the player -->
+            <th>MatchesPlayed</th>
+            <!-- This column will display the Runs scored of the player -->
+            <th>Runs</th>
+        </tr>
+    </thead>
+    <tbody>
+         <!-- This foreach loop will iterate through each player in the "Top10RunScorers" list of the model -->
+        @foreach (var player in Model.Top10RunScorers)
+        {
+            Console.WriteLine(player);
+             //<!-- This row will display the player's name, matches played, and Runs-->
+            <tr>
+                <td>@player.PlayerName</td> 
+                <td>@player.MatchesPlayed</td>
+                <td>@player.Runs</td>
+             </tr>
+        }
+    </tbody>
+</table>
+
+<!--Adding styling to the webpage using CSS -->
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #d4edda;
+    }
+</style>

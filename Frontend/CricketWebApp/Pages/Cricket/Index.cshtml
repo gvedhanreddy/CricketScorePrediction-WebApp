@@ -1,0 +1,114 @@
+﻿@page
+@model CricketWebApp.Pages.Cricket.IndexModel
+@{
+}
+
+<!-- Adding Styling to the Index page-->
+<style>
+    table{
+        border-collapse:collapse;
+    width=100%
+    }
+    th,td{
+        padding:10px;
+        text-align:center;
+    }
+    th{
+        background-color:#f2f2f2;
+    }
+    .add-button{
+        padding:10px;
+        background-color:#4CAF50;
+        color:white;
+        border:none;
+        border-radius:4px;
+        cursor:pointer;
+    }
+</style>
+
+
+<!-- Add New Player Button -->
+<h5>Add New Player</h5>
+<button class="add-button" onclick="window.location.href='@Url.Page("./Create")'">Add Player</button>
+<!--<a asp-page="./Create">Add New Player</a>-->
+
+<!-- Players Table -->
+<table>
+    <thead>
+        <tr>
+            <!-- Display player position-->
+            <th>POS</th>
+            <!-- Display player Name-->
+            <th>PlayerName</th>
+            <!-- Display player Matches played-->
+            <th>MatchesPlayed</th>
+            <!-- Display player Inns played-->
+            <th>Inns</th>
+            <!-- Display player Not Outs-->
+            <th>NO</th>
+            <!-- Display Runs scored by player-->
+            <th>Runs</th>
+            <!-- Display player Highest score-->
+            <th>HighestScore</th>
+            <!-- Display player Strikerate-->
+            <th>Strikerate</th>
+            <!-- Display Hundered scored by player-->
+            <th>Hundred</th>
+            <!-- Display Fifities scored by player -->
+            <th>Fifty</th>
+            <!-- Display player Fours-->
+            <th>Fours</th>
+            <!-- Display player Sixes-->
+            <th>Sixes</th>
+            <!-- Display player Wickets-->
+            <th>Wickets</th>
+            <!-- Display Action like edit|delete option-->
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+         <!-- Iterate over the Players list to display each player's data -->
+        @foreach (var Player in Model.Players)
+        {
+            Console.WriteLine(Player);
+        <td></td>
+
+        <tr>
+            <!-- Display player id-->
+            <td>@Html.DisplayFor(modelItem => Player.Id)</td>
+            <!-- Display player Name-->
+            <td>@Html.DisplayFor(modelItem => Player.PlayerName)</td>
+            <!-- Display player Matches played-->
+            <td>@Html.DisplayFor(modelItem => Player.MatchesPlayed)</td>
+            <!-- Display player Inns-->
+            <td>@Html.DisplayFor(modelItem => Player.Inns)</td>
+            <!-- Display player Notout-->
+            <td>@Html.DisplayFor(modelItem => Player.NO)</td>
+            <!-- Display player Runs-->
+            <td>@Html.DisplayFor(modelItem => Player.Runs)</td>
+            <!-- Display player HighestScore-->
+            <td>@Html.DisplayFor(modelItem => Player.HighestScore)</td>
+            <!-- Display player Strikerate-->
+            <td>@Html.DisplayFor(modelItem => Player.Strikerate)</td>
+            <!-- Display player Hundered-->
+            <td>@Html.DisplayFor(modelItem => Player.Hundred)</td>
+            <!-- Display player Fifities-->
+            <td>@Html.DisplayFor(modelItem => Player.Fifty)</td>
+            <!-- Display player Fours-->
+            <td>@Html.DisplayFor(modelItem => Player.Fours)</td>
+            <!-- Display player Sixes-->
+            <td>@Html.DisplayFor(modelItem => Player.Sixes)</td>
+            <!-- Display player Wickets-->
+            <td>@Html.DisplayFor(modelItem => Player.Wickets)</td>
+
+            <!-- Links to edit and delete a player pages -->
+            <td>
+                <a asp-page="./Edit" asp-route-id="@Player.Id">Edit</a> |
+                <a asp-page="./Delete" asp-route-id="@Player.Id">Delete</a>
+            </td>
+        </tr>
+
+        }
+    </tbody>
+</table>
+

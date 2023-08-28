@@ -1,0 +1,119 @@
+﻿@page
+@model CricketWebApp.Pages.Cricket.EditModel
+@{
+// This is the Razor page directive that specifies the model type and namespace for this page.
+// It indicates that this page is strongly-typed to the EditModel class in the CricketWebApp.Pages.Cricket namespace.
+}
+<br>
+<h2>Edit Player</h2>
+
+<div class="row">
+    <div class="col-md-4">
+         <!-- Form for submitting player data with post method -->
+        <form method="post" id="Player.Id">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Player.Id" />
+
+            <!-- Form fields for editing player data -->
+            <!--Edit player name-->
+            <div class="form-group">
+                <label asp-for="Player.PlayerName" class="control-label"></label>
+                <input asp-for="Player.PlayerName" class="form-control" />
+                <span asp-validation-for="Player.PlayerName" class="text-danger"></span>
+            </div>
+            <!-- Edit Number of Matches played by the player-->
+            <div class="form-group">
+                <label asp-for="Player.MatchesPlayed" class="control-label"></label>
+                <input asp-for="Player.MatchesPlayed" class="form-control" />
+                <span asp-validation-for="Player.MatchesPlayed" class="text-danger"></span>
+            </div>
+            <!--Edit Number of Inns player by the player -->
+            <div class="form-group">
+                <label asp-for="Player.Inns" class="control-label"></label>
+                <input asp-for="Player.Inns" class="form-control" />
+                <span asp-validation-for="Player.Inns" class="text-danger"></span>
+            </div>
+            <!--Edit Number of NotOut involved by the player -->
+            <div class="form-group">
+                <label asp-for="Player.NO" class="control-label"></label>
+                <input asp-for="Player.NO" class="form-control" />
+                <span asp-validation-for="Player.NO" class="text-danger"></span>
+            </div>
+            <!-- Edit Number of Runs Scored by the player-->
+            <div class="form-group">
+                <label asp-for="Player.Runs" class="control-label"></label>
+                <input asp-for="Player.Runs" class="form-control" />
+                <span asp-validation-for="Player.Runs" class="text-danger"></span>
+            </div>
+            <!-- Edit Player Highest Score scored by the player-->
+            <div class="form-group">
+                <label asp-for="Player.HighestScore" class="control-label"></label>
+                <input asp-for="Player.HighestScore" class="form-control" />
+                <span asp-validation-for="Player.HighestScore" class="text-danger"></span>
+            </div>
+            <!--Edit Player Strikerate -->
+            <div class="form-group">
+                <label asp-for="Player.Strikerate" class="control-label"></label>
+                <input asp-for="Player.Strikerate" class="form-control" />
+                <span asp-validation-for="Player.Strikerate" class="text-danger"></span>
+            </div>
+            <!-- Edit Number of Hundered scored by the player-->
+            <div class="form-group">
+                <label asp-for="Player.Hundred" class="control-label"></label>
+                <input asp-for="Player.Hundred" class="form-control" />
+                <span asp-validation-for="Player.Hundred" class="text-danger"></span>
+            </div>
+            <!-- Edit Number of Fifties Scored by the player-->
+            <div class="form-group">
+                <label asp-for="Player.Fifty" class="control-label"></label>
+                <input asp-for="Player.Fifty" class="form-control" />
+                <span asp-validation-for="Player.Fifty" class="text-danger"></span>
+            </div>
+            <!-- Edit Number of Fours Hit by the player-->
+            <div class="form-group">
+                <label asp-for="Player.Fours" class="control-label"></label>
+                <input asp-for="Player.Fours" class="form-control" />
+                <span asp-validation-for="Player.Fours" class="text-danger"></span>
+            </div>
+            <!--Edit Number of Sixes hit by the player -->
+            <div class="form-group">
+                <label asp-for="Player.Sixes" class="control-label"></label>
+                <input asp-for="Player.Sixes" class="form-control" />
+                <span asp-validation-for="Player.Sixes" class="text-danger"></span>
+            </div>
+            <!--Edit Number of Wickets taken by the Player -->
+            <div class="form-group">
+                <label asp-for="Player.Wickets" class="control-label"></label>
+                <input asp-for="Player.Wickets" class="form-control" />
+                <span asp-validation-for="Player.Wickets" class="text-danger"></span>
+            </div>
+            <!--Submit button to save the edited player stats -->
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<!-- Link for navigating back to the List page -->
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+@if (ViewData["Message"] != null)
+{
+    // This section checks if there is any message in ViewData, and if so, displays an alert with the message.
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("@ViewData["Message"]");
+        };
+    </script>
+}
+
+@section Scripts {
+     
+    @{
+     // This section is used to include any additional scripts that are required for this page.
+     // In this case, it includes the validation scripts partial, which provides client-side validation functionality.
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

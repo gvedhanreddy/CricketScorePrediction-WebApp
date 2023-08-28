@@ -1,0 +1,71 @@
+﻿@page
+@model CricketWebApp.Pages.ViewPlayerstats.Top10BowlersModel
+@{
+}
+
+<!-- This is the header of the table, which will contain column names -->
+<h1>Top 10 Wicket Takers</h1>
+
+<table>
+    <thead>
+        <tr>
+            <!-- This column will display the name of the player -->
+            <th>PlayerName</th>
+            <!-- This column will display the matchesplayed of the player -->
+            <th>MatchesPlayed</th>
+            <!-- This column will display the wickets taken by the player -->
+            <th>Wickets</th>
+        </tr>
+    </thead>
+    <tbody>
+         <!-- This foreach loop will iterate through each player in the "Top10Bowlers" list of the model -->
+        @foreach (var player in Model.MostSixes)
+        @foreach (var player in Model.Top10Bowlers)
+        {
+            Console.WriteLine(player);
+                //<!-- This row will display the player's name, matches played, and Wickets Taken-->
+                <tr>
+                    <td>@player.PlayerName</td>
+                    <td>@player.MatchesPlayed</td>
+                    <td>@player.Wickets</td>
+                 </tr>
+        }
+    </tbody>
+</table>
+
+<!--Adding styling to the webpage using CSS -->
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 8px;
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #ddd;
+    }
+
+    .wickets {
+        background-image: url("wicket-icon.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        padding-left: 20px;
+    }
+
+    .top-player {
+        color: #228B22;
+    }
+</style>

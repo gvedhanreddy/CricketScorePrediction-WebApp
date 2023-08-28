@@ -1,0 +1,82 @@
+﻿@page
+@model CricketWebApp.Pages.PredictiveAnalysis.BoundaryPercentageModel
+
+<!--Post method to search for the player name and fetch from database-->
+<form method="post" class="form">
+	<label for="PlayerName" class="label">Enter player name:</label>
+	<input type="text" id="PlayerName" name="PlayerName" class="input" />
+	<button type="submit" class="btn">Submit</button>
+</form>
+
+<!-- Display the Boundary percentage with the player name-->
+@if (Model.DataModel != null)
+{
+	<!--Find and fetch the PlayerName from database-->
+	@foreach (var v in Model.DataModel)
+	{
+		<div class="card">
+			<h4 class="card-title">@v.PlayerName</h4>
+			<div class="card-body">
+				<p class="card-text">Boundary Percentage: @v.boundaryPercentage</p>
+			</div>
+		</div>
+	}
+}
+
+<!--Adding styling to the webpage -->
+<style>
+	.form {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 50px;
+	}
+
+	.label {
+		font-size: 20px;
+		margin-bottom: 10px;
+	}
+
+	.input {
+		padding: 10px;
+		border: 2px solid #333;
+		border-radius: 5px;
+		font-size: 18px;
+		width: 300px;
+		margin-bottom: 20px;
+	}
+
+	.btn {
+		background-color: #007bff;
+		color: #fff;
+		font-size: 20px;
+		padding: 10px 20px;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+	}
+
+		.btn:hover {
+			background-color: #0062cc;
+		}
+
+	.card {
+		background-color: #fff;
+		margin-top: 20px;
+		padding: 10px;
+		border: 2px solid #333;
+		border-radius: 5px;
+		box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+	}
+
+	.card-title {
+		font-size: 24px;
+		margin-bottom: 10px;
+	}
+
+	.card-text {
+		font-size: 18px;
+		margin: 0;
+	}
+</style>

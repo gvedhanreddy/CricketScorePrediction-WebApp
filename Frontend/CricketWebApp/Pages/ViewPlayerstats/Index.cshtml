@@ -1,0 +1,61 @@
+﻿@page
+@model CricketWebApp.Pages.ViewPlayerstats.IndexModel
+@{
+}
+
+<h1>Player Analysis</h1>
+<div>
+
+    <!-- Link to search players by name -->
+    <h4>Search By Name</h4>
+    <a asp-page="./SearchByname" class="">Click here</a>
+    <br />
+
+     <!-- Link to display top 10 run scorers -->
+    <h5>Top10RunScorers</h5>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-page="/ViewPlayerstats/Top10RunScorers">Clickhere</a>
+    </li>
+
+    <!-- Link to display top 10 bowlers -->
+   <h5>Top10Bowlers</h5>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-page="/ViewPlayerstats/Top10Bowlers">Clickhere</a>
+    </li>
+
+    <!-- Link to display top 10 strike rate -->
+    <h5>Top10StrikeRate</h5>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-page="/ViewPlayerstats/Top10StrikeRate">Clickhere</a>
+     </li>
+
+    <!-- Link to display top 10 individual scores -->
+    <h5>Top10IndividualScores</h5>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-page="/ViewPlayerstats/Top10IndividualScores">Clickhere</a>
+    </li>
+
+    <!-- Link to display players with most hundreds -->
+    <h5>Most Hundreds</h5>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-page="/ViewPlayerstats/MostHundreds">Clickhere</a>
+    </li>
+
+    <!-- Link to display players with most fifties -->
+    <h5>Most Fifty</h5>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-page="/ViewPlayerstats/MostFifty">Clickhere</a>
+    </li>
+
+     <!-- Link to display players with most sixes -->
+    <h5>Most Sixes</h5>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-page="/ViewPlayerstats/MostSixes">Clickhere</a>
+    </li>
+
+     <!-- Link to display players with most fours-->
+    <h5>Most Fours</h5>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-page="/ViewPlayerstats/MostFours">Clickhere</a>
+    </li>
+</div>

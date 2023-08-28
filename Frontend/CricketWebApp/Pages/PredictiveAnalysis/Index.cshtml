@@ -1,0 +1,42 @@
+﻿@page
+@model CricketWebApp.Pages.PredictiveAnalysis.IndexModel
+@{
+}
+
+<!--Diaplay title for the webpage-->
+<h1 class="text-center mb-5">Predictive Player Analysis</h1>
+
+<!-- Linking the webpages to go to and fro from other pages-->
+<div class="container">
+    <div class="row">
+        <!-- Display the it as card in the front end-->
+        <div class="col-md-6 col-lg-4 mb-5">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="card-title">Search Player Name to get BoundaryPercentage</h4>
+                    <p class="card-text">Search for the player name and get the stats in the league</p>
+                    <a class="btn btn-primary stretched-link" asp-area="" asp-page="/PredictiveAnalysis/AverageRunsScored">View
+                    </a>
+                </div>
+            </div>
+        </div>
+         <!-- Display the it as card in the front end-->
+         <div class="col-md-6 col-lg-4 mb-5">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="card-title">Top 10 Run Scorers</h4>
+                    <p class="card-text">View the top 10 run scorers in the league</p>
+                    <a class="btn btn-primary stretched-link" asp-area="" asp-page="/PredictiveAnalysis/RunsPredictor">View</a>
+                </div>
+            </div>
+        </div>
+         <!-- Display the it as card in the front end-->
+          <div class="col-md-6 col-lg-4 mb-5">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h4 class="card-title">Top 10 Run Scorers</h4>
+                    <p class="card-text">View the top 10 run scorers in the league</p>
+                    <a class="btn btn-primary stretched-link" asp-area="" asp-page="/PredictiveAnalysis/WicketsPredictor">View</a>
+                </div>
+            </div>
+        </div>

@@ -1,0 +1,61 @@
+﻿@page
+@model CricketWebApp.Pages.ViewPlayerstats.Top10StrikeRateModel
+@{
+}
+
+<!-- This is the header of the table, which will contain column names -->
+<h1>Top 10 Players with Highest StrikeRate</h1>
+
+<table>
+    <thead>
+        <tr>
+            <!-- This column will display the name of the player -->
+            <th>PlayerName</th>
+            <!-- This column will display the Matchesplayed of the player -->
+            <th>MatchesPlayed</th>
+            <!-- This column will display the Runs of the player -->
+            <th>Runs</th>
+            <!-- This column will display the Strikerate of the player -->
+            <th>StrikeRate</th>
+        </tr>
+    </thead>
+    <tbody>
+         <!-- This foreach loop will iterate through each player in the "Top10StrikeRate" list of the model -->
+        @foreach (var player in Model.Top10Strikerate)
+        {
+            Console.WriteLine(player);
+             //<!-- This row will display the player's name, matches played, and strikerate-->
+             <tr>
+                <td>@player.PlayerName</td>
+                 <td>@player.MatchesPlayed</td>
+                 <td>@player.Runs</td>
+                <td>@player.Strikerate</td>
+             </tr>
+        }
+    </tbody>
+</table>
+
+<!--Adding styling to the webpage using CSS -->
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #ddd;
+    }
+
+    .top-player {
+        color: #228B22;
+    }
+</style>

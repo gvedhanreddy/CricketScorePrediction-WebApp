@@ -1,0 +1,114 @@
+﻿@page
+@model CricketWebApp.Pages.Cricket.DeleteModel
+@{
+}
+
+<!-- Display details of the player to be deleted -->
+<br>
+<h2>Delete Player</h2>
+
+<div>
+    <hr />
+    <dl class="row">
+        <!-- Display player's name -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Player.PlayerName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Player.PlayerName)
+        </dd>
+        <!-- Display matches played by the player -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Player.MatchesPlayed)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Player.MatchesPlayed)
+        </dd>
+        <!-- Display number of innings played by the player -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Player.Inns)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Player.Inns)
+        </dd>
+        <!-- Display number of times player remained not out (NO) -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Player.NO)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Player.NO)
+        </dd>
+        <!-- Display total runs scored by the player -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Player.Runs)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Player.Runs)
+        </dd>
+
+        <!-- Display highest score by the player -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Player.HighestScore)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Player.HighestScore)
+        </dd>
+
+        <!-- Display strike rate of the player -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Player.Strikerate)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Player.Strikerate)
+        </dd>
+
+        <!-- Display number of hundreds scored by the player -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Player.Hundred)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Player.Hundred)
+        </dd>
+
+        <!-- Display number of fifties scored by the player -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Player.Fifty)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Player.Fifty)
+        </dd>
+
+         <!-- Display number of fours hit by the player -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Player.Fours)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Player.Fours)
+        </dd>
+
+         <!-- Display number of sixes hit by the player -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Player.Sixes)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Player.Sixes)
+        </dd>
+
+        <!-- Display number of wickets taken by the player-->
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Player.Wickets)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Player.Wickets)
+        </dd>
+    </dl>
+
+    <!-- Form to delete the player -->
+    <form method="post">
+        <input type="hidden" asp-for="Player.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
+

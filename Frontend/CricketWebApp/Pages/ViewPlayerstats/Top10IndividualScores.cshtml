@@ -1,0 +1,57 @@
+﻿@page
+@model CricketWebApp.Pages.ViewPlayerstats.Top10IndividualScoresModel
+
+<!-- This is the header of the table, which will contain column names -->
+<h3>Top 10 Players with Highest Score in an Inning</h3>
+
+<!-- Add some CSS classes to style the table -->
+<table class="table table-striped table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <!-- This column will display the name of the player -->
+            <th>PlayerName</th>
+            <!-- This column will display the innings of the player -->
+            <th>Innings</th>
+            <!-- This column will display the runs of the player -->
+            <th>Runs</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- This foreach loop will iterate through each player in the "Top10IndividualScores" list of the model -->
+        @foreach (var player in Model.Top10IndividualScore)
+        {
+            Console.WriteLine(player);
+            //<!-- This row will display the player's name, matches played, and Highest Individual score-->
+            <tr>
+                <td>@player.PlayerName</td>
+                <td>@player.MatchesPlayed</td>
+                <td>@player.HighestScore</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!--Adding styling to the webpage using CSS -->
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #ddd;
+    }
+
+    .top-player {
+        color: #228B22;
+    }
+</style>

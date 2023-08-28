@@ -1,0 +1,112 @@
+﻿@page
+@model CricketWebApp.Pages.Cricket.CreateModel
+@{
+}
+
+<!-- Set up the create player form -->
+<br>
+<h2>Create Player</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+
+             <!-- Display validation errors for the model -->
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+             <!-- Input fields for each property of the Player model -->
+            <!-- Player Id input field -->
+             <!-- <div class="form-group">
+                <label asp-for="Player.Id" class="control-label"></label>
+                <input asp-for="Player.Id" class="form-control" />
+                <span asp-validation-for="Player.Id" class="text-danger"></span>
+            </div>-->
+             <!-- Player Name input field -->
+            <div class="form-group">
+                <label asp-for="Player.PlayerName" class="control-label"></label>
+                <input asp-for="Player.PlayerName" class="form-control" />
+                <span asp-validation-for="Player.PlayerName" class="text-danger"></span>
+            </div>
+             <!-- Player MatchesPlayed input field -->
+            <div class="form-group">
+                <label asp-for="Player.MatchesPlayed" class="control-label"></label>
+                <input asp-for="Player.MatchesPlayed" class="form-control" />
+                <span asp-validation-for="Player.MatchesPlayed" class="text-danger"></span>
+            </div>
+             <!-- Player Inns input field -->
+            <div class="form-group">
+                <label asp-for="Player.Inns" class="control-label"></label>
+                <input asp-for="Player.Inns" class="form-control" />
+                <span asp-validation-for="Player.Inns" class="text-danger"></span>
+            </div>
+             <!-- Player NO input field -->
+            <div class="form-group">
+                <label asp-for="Player.NO" class="control-label"></label>
+                <input asp-for="Player.NO" class="form-control" />
+                <span asp-validation-for="Player.NO" class="text-danger"></span>
+            </div>
+             <!-- Player Runs input field -->
+            <div class="form-group">
+                <label asp-for="Player.Runs" class="control-label"></label>
+                <input asp-for="Player.Runs" class="form-control" />
+                <span asp-validation-for="Player.Runs" class="text-danger"></span>
+            </div>
+             <!-- Player HighestScore input field -->
+            <div class="form-group">
+                <label asp-for="Player.HighestScore" class="control-label"></label>
+                <input asp-for="Player.HighestScore" class="form-control" />
+                <span asp-validation-for="Player.HighestScore" class="text-danger"></span>
+            </div>
+             <!-- Player Strikerate input field -->
+            <div class="form-group">
+                <label asp-for="Player.Strikerate" class="control-label"></label>
+                <input asp-for="Player.Strikerate" class="form-control" />
+                <span asp-validation-for="Player.Strikerate" class="text-danger"></span>
+            </div>
+             <!-- Player Hundred input field -->
+            <div class="form-group">
+                <label asp-for="Player.Hundred" class="control-label"></label>
+                <input asp-for="Player.Hundred" class="form-control" />
+                <span asp-validation-for="Player.Hundred" class="text-danger"></span>
+            </div>
+             <!-- Player Fifty input field -->
+            <div class="form-group">
+                <label asp-for="Player.Fifty" class="control-label"></label>
+                <input asp-for="Player.Fifty" class="form-control" />
+                <span asp-validation-for="Player.Fifty" class="text-danger"></span>
+            </div>
+             <!-- Player Fours input field -->
+            <div class="form-group">
+                <label asp-for="Player.Fours" class="control-label"></label>
+                <input asp-for="Player.Fours" class="form-control" />
+                <span asp-validation-for="Player.Fours" class="text-danger"></span>
+            </div>
+             <!-- Player Sixes input field -->
+            <div class="form-group">
+                <label asp-for="Player.Sixes" class="control-label"></label>
+                <input asp-for="Player.Sixes" class="form-control" />
+                <span asp-validation-for="Player.Sixes" class="text-danger"></span>
+            </div>
+             <!-- Player Wickets input field -->
+            <div class="form-group">
+                <label asp-for="Player.Wickets" class="control-label"></label>
+                <input asp-for="Player.Wickets" class="form-control" />
+                <span asp-validation-for="Player.Wickets" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+ <!-- Return to Player List -->
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

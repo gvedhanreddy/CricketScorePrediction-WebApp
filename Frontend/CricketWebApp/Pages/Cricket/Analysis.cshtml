@@ -1,0 +1,66 @@
+﻿@page
+@model CricketWebApp.Pages.Cricket.AnalysisModel
+@{
+}
+
+<h1>Cricket Analysis</h1>
+
+<!-- Form to enter player ID for average runs scored analysis -->
+<h2>Average Runs Scored</h2>
+
+<form method="get" asp-page="./Analysis">
+    <label>Enter player ID:</label>
+    <input type="text" name="id" />
+    <button type="submit">Submit</button>
+</form>
+
+<!-- Display average runs scored for the entered player ID -->
+@if (Model.AverageRunsScored != null)
+{
+    <p>@Model.PlayerName has an average of @Model.AverageRunsScored runs scored</p>
+}
+
+<!-- Form to enter player ID for average wickets taken per match analysis -->
+<h2>Average Wickets Taken per Match</h2>
+
+<form method="get" asp-page="./Analysis">
+    <label>Enter player ID:</label>
+    <input type="text" name="id" />
+    <button type="submit">Submit</button>
+</form>
+
+<!-- Display average wickets taken per match for the entered player ID -->
+@if (Model.AverageWicketsTaken != null)
+{
+    <p>@Model.PlayerName has an average of @Model.AverageWicketsTaken wickets taken per match</p>
+}
+
+<!-- Form to enter player name for average runs scored analysis -->
+<h2>Average Runs Scored by Player Name</h2>
+
+<form method="get" asp-page="./Analysis">
+    <label>Enter player name:</label>
+    <input type="text" name="name" />
+    <button type="submit">Submit</button>
+</form>
+
+<!-- Display average runs scored for the entered player name -->
+@if (Model.AverageRunsScored != null)
+{
+    <p>The average runs scored by @Model.PlayerName is @Model.AverageRunsScored</p>
+}
+
+<!-- Form to enter player name for average wickets taken per match analysis -->
+<h2>Average Wickets Taken per Match by Player Name</h2>
+
+<form method="get" asp-page="./Analysis">
+    <label>Enter player name:</label>
+    <input type="text" name="name" />
+    <button type="submit">Submit</button>
+</form>
+
+<!-- Display average wickets taken per match for the entered player name -->
+@if (Model.AverageWicketsTaken != null)
+{
+    <p>The average wickets taken per match by @Model.PlayerName is @Model.AverageWicketsTaken</p>
+}

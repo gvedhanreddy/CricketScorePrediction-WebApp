@@ -1,0 +1,59 @@
+﻿@page
+@model CricketWebApp.Pages.ViewPlayerstats.MostHundredsModel
+@{
+}
+
+<!-- This is the header of the table, which will contain column names -->
+<h3>Most 100s Scored</h3>
+
+<table>
+    <thead>
+        <tr>
+           <!-- This column will display the name of the player -->
+           <th style="background-color: #4CAF50; color: white;">Player Name</th>
+           <!-- This column will display the Inns of the player -->
+           <th style="background-color: #4CAF50; color: white;">Innings</th>
+           <!-- This column will display the Hundreds Scored by the player -->
+           <th style="background-color: #4CAF50; color: white;">Hundreds Scored</th>
+           <!-- This column will display the Runs Scored by the player -->
+           <th style="background-color: #4CAF50; color: white;">Runs</th>
+        </tr>
+    </thead>
+    <tbody>
+         <!-- This foreach loop will iterate through each player in the "MostHundreds" list of the model -->
+        @foreach (var player in Model.MostHundreds)
+        {
+            Console.WriteLine(player);
+            <tr>
+                <td>@player.PlayerName</td>
+                <td>@player.MatchesPlayed</td>
+                <td>@player.Hundred</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!--Adding styling to the webpage using CSS -->
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: left;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:hover {
+        background-color: #ddd;
+    }
+
+    .top-player {
+        color: #228B22;
+    }
+</style>

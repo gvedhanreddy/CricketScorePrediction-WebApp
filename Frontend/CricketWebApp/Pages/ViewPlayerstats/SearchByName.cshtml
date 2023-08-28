@@ -1,0 +1,125 @@
+﻿@page
+@model CricketWebApp.Pages.ViewPlayerstats.SearchByNameModel
+@{
+}
+
+<h1 class="text-center mb-4">Search by Player Name</h1>
+<!--This section of the code defines the HTML layout for the search form.-->
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <!-- Post method to get the player stats that matches from the database using the player name-->
+        <form method="POST" class="mb-5">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+               <label asp-for="searchString" class="control-label"></label>
+                <input asp-for="searchString" class="form-control" />
+                <span asp-validation-for="searchString" class="text-danger"></span>
+             </div>
+            <br>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Search</button>
+            </div>
+        </form>
+    </div>
+</div>        
+
+<!--To Display the Searched Player details-->
+<div>
+
+    @if (Model.Modeldata != null)
+    {
+            <dl class="row">
+                <!--//Display the player id's from database-->
+                <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Modeldata.Id)
+                </dt>
+                <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Modeldata.Id)
+                </dd>
+                <!--//Display the player Names from the database-->
+                <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Modeldata.PlayerName)
+                </dt>
+                <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Modeldata.PlayerName)
+                </dd>
+                <!--//Display the Number of matches player by the player-->
+                <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Modeldata.MatchesPlayed)
+                </dt>
+                <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Modeldata.MatchesPlayed)
+                </dd>
+                <!--//Display the Number of Inns by the player-->
+                <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Modeldata.Inns)
+                </dt>
+                <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Modeldata.Inns)
+                </dd>
+                <!--//Display the Number of notout by a player-->
+                <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Modeldata.NO)
+                </dt>
+                <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Modeldata.NO)
+                </dd>
+                <!--//Display the Number of runs scored by the player-->
+                <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Modeldata.Runs)
+                </dt>
+                <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Modeldata.Runs)
+                </dd>
+                <!--//Display the HighestScore scored by the player-->
+                 <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Modeldata.HighestScore)
+                </dt>
+                <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Modeldata.HighestScore)
+                </dd>
+                <!--//Display the Strikerate of the player-->
+                <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Modeldata.Strikerate)
+                </dt>
+                <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Modeldata.Strikerate)
+                </dd>
+                <!--//Display the Number of Hundreds Scored by the player-->
+                 <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Modeldata.Hundred)
+                </dt>
+                <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Modeldata.Hundred)
+                </dd>
+                <!--//Display the Number of fifties scored by the player-->
+                <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Modeldata.Fifty)
+                </dt>
+                <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Modeldata.Fifty)
+                </dd>
+                <!--//Display the Number of fours scored by the player-->
+                 <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Modeldata.Fours)
+                </dt>
+                <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Modeldata.Fours)
+                </dd>
+                <!--//Display the Number of sixes scored by the player-->
+                 <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Modeldata.Sixes)
+                </dt>
+                <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Modeldata.Sixes)
+                </dd>
+                <!--//Display the Number of wickets taken by the player-->
+                <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Modeldata.Wickets)
+                </dt>
+                <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Modeldata.Wickets)
+                </dd>
+            </dl>
+    }
+</div>

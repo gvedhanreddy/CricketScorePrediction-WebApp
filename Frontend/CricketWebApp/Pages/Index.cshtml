@@ -1,0 +1,72 @@
+﻿@page
+@model IndexModel
+@{
+    //sets the page title
+    ViewData["Title"] = "Cricket Statistics Home page";
+}
+<!--Adding style to webpage-->
+<style>
+    body {
+        /*sets the background color of the page*/
+        background-color: black;
+        /*sets the font color of the page*/
+        color: white;
+    }
+
+    .btn-primary {
+        /*sets the background color of the page*/
+        background-color: black;
+        /*sets the font color of the page*/
+        color: white;
+    }
+</style>
+<!--Adding card design to the index file -->
+<div class="container-fluid py-5">
+    <div class="container">
+        <!--displays a heading on the page-->
+        <h2 class="text-center mb-5">IPL Player Stats</h2>
+        
+ <!--Adding card design for crud operation -->
+    <div class="container-fluid py-5">   
+        <div class="row justify-content-center">
+            <div class="col-md-4 mb-4">
+                <div class="card border-0 shadow-lg">
+                    <div class="card-body">
+                        <!--displays a heading for the first card-->
+                        <h4 class="card-title mb-3 text-dark">Player CRUD Operations</h4>
+                        <!--displays a brief description of the first card-->
+                        <p class="card-text text-dark">Manage player information using Create, Read, Update, and Delete operations.</p>
+                        <!--A link to the CRUD operations page-->
+                        <a asp-page="/Cricket/Index" class="btn btn-primary">Click here</a>
+                    </div>
+                </div>
+            </div>
+             <!--Adding card design for Player statistics -->
+            <div class="col-md-4 mb-4">
+                <div class="card border-0 shadow-lg">
+                    <div class="card-body">
+                        <!--displays a heading for the second card-->
+                        <h4 class="card-title mb-3 text-dark">View Player Stats</h4>
+                         <!--displays a brief description of the second card-->
+                        <p class="card-text text-dark">View player statistics, such as top run-scorers, bowlers, and more.</p>
+                        <!--A link to the PlayerStatistics operations page-->
+                        <a asp-page="/ViewPlayerstats/Index" class="btn btn-primary">Click here</a>
+                    </div>
+                </div>
+            </div>
+             <!--Adding card design for Player prediction analysis-->
+            <div class="col-md-4 mb-4">
+                <div class="card border-0 shadow-lg">
+                    <div class="card-body">
+                        <!--displays a heading for the third card-->
+                        <h4 class="card-title mb-3 text-dark">View Player Predictive Analysis</h4>
+                        <!--displays a brief description of the third card-->
+                        <p class="card-text text-dark">View player statistics, such as predicted scores and more.</p>
+                        <!--A link to the Predictive Analysis page-->
+                        <<a asp-page="/PredictiveAnalysis/Index" class="btn btn-primary">Click here</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
